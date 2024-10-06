@@ -1,0 +1,314 @@
+.container {
+  font-size: 14px;
+  display: block;
+}
+.container .header {
+  display: flex;
+  text-transform: uppercase;
+  font-size: 1em;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .header > .header__theme-box-container {
+  display: flex;
+  gap: 5px;
+}
+.container .header > .header__theme-box-container > .header__theme-box {
+  width: 40px;
+  position: relative;
+}
+.container .header > .header__theme-box-container > .header__theme-box > .header__theme-box__btn {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+}
+.container .header > .header__theme-box-container > .header__theme-box > .header__theme-box__btn::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  left: 2px;
+  bottom: 2px;
+  transition: 0.4s;
+}
+.container .header__theme-box__box:checked + .header__theme-box__btn::before {
+  transform: translateX(calc(100% - 4px));
+}
+.container .header__theme-box__box[type=checkbox] {
+  display: none;
+}
+
+.dark {
+  background-color: #272729;
+}
+.dark .header {
+  color: #F5F5F5;
+}
+.dark .header .header__color-different {
+  color: #E4D4B6;
+}
+.dark .header__theme-box > .header__theme-box__btn {
+  background-color: #E4D4B6;
+}
+.dark .header__theme-box > .header__theme-box__btn::before {
+  background-color: #272729;
+}
+
+.light {
+  background-color: #F7F7F7;
+}
+.light .header {
+  color: #272729;
+}
+.light .header .header__color-different {
+  color: #B08A5A;
+}
+.light .header__theme-box > .header__theme-box__btn::before {
+  background-color: #272729;
+}
+.light input:checked + .header__theme-box__btn {
+  background-color: #E4D4B6;
+}
+
+@media (min-width: 600px) {
+  .container {
+    font-size: 18px;
+  }
+}
+@media (min-width: 900px) {
+  .container {
+    font-size: 20px;
+  }
+}
+.presentation {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.presentation .presentation__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+}
+.presentation .presentation__left .presentation__phrase {
+  max-width: 320px;
+}
+.presentation .presentation__right {
+  border: 5px solid #736A54;
+}
+.presentation .presentation__right .presentation__image {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.dark .presentation__left {
+  text-align: center;
+}
+.dark .presentation__left .presentation__title {
+  color: #F5F5F5;
+}
+.dark .presentation__left .presentation__equal {
+  color: #B08A5A;
+}
+.dark .presentation__left .presentation__phrase {
+  color: #9F8F7B;
+}
+.dark .presentation__right {
+  background-image: linear-gradient(to bottom right, #272729, #a15e53, #B08A5A, #9F8F7B, #736A54);
+  border: 5px solid #B08A5A;
+}
+
+.light .presentation__left .presentation__title {
+  color: #272729;
+}
+.light .presentation__left .presentation__equal {
+  color: #B08A5A;
+}
+.light .presentation__left .presentation__phrase {
+  color: #736A54;
+}
+.light .presentation__right {
+  background-image: linear-gradient(to bottom left, #E4D4B6, #F5F5F5, #B08A5A, #9F8F7B, #736A54);
+  border: 5px solid #736A54;
+}
+
+@media (min-width: 600px) {
+  .presentation .presentation__right .presentation__image {
+    width: 250px;
+    height: 300px;
+  }
+}
+@media (min-width: 900px) {
+  .presentation {
+    flex-direction: row;
+  }
+  .presentation .presentation__left {
+    text-align: left;
+  }
+  .presentation .presentation__right .presentation__image {
+    width: 300px;
+    height: 350px;
+  }
+}
+.text-content {
+  display: grid;
+  max-width: 320px;
+  height: 40vh;
+  margin: 0 auto;
+  padding: 0 10px;
+  place-content: center;
+  text-align: justify;
+}
+
+.dark .text-content {
+  color: #E4D4B6;
+}
+.dark .text-content > .text {
+  padding: 10px;
+  border: 2px solid #736A54;
+  box-shadow: 9px 9px 0px #736A54;
+}
+
+.light .text-content {
+  color: #9F8F7B;
+}
+.light .text-content > .text {
+  padding: 10px;
+  border: 2px solid #736A54;
+  box-shadow: 9px 9px 0px #736A54;
+}
+
+@media (min-width: 600px) {
+  .text-content {
+    max-width: 380px;
+  }
+}
+@media (min-width: 700px) {
+  .text-content {
+    height: 50vh;
+    max-width: 600px;
+  }
+}
+.icons-knowledge {
+  display: flex;
+  height: 20vh;
+  justify-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.icons-knowledge__flex-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icons-knowledge__icon {
+  width: 50px;
+}
+
+.icons-knowledge__icon-name {
+  text-transform: uppercase;
+}
+
+.dark .icons-knowledge__icon-name {
+  color: #F5F5F5;
+}
+
+.light .icons-knowledge__icon-name {
+  color: #736A54;
+}
+
+@media (min-width: 600px) {
+  .icons-knowledge {
+    height: 30vh;
+    gap: 30px;
+  }
+  .icons-knowledge__icon {
+    width: 80px;
+  }
+}
+@media (min-width: 900px) {
+  .icons-knowledge__icon {
+    width: 100px;
+  }
+}
+.projects {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.projects-title {
+  text-align: center;
+  padding: 10px;
+}
+
+.projects__flex-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.projects__project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.project__image {
+  width: 250px;
+}
+
+.dark .projects-title {
+  color: #E4D4B6;
+}
+.dark .project__name {
+  color: #B08A5A;
+}
+.dark .project__paragraph {
+  color: #736A54;
+}
+
+.light .projects-title {
+  color: #272729;
+}
+.light .project__name {
+  color: #B08A5A;
+}
+.light .project__paragraph {
+  color: #736A54;
+}
+
+@media (min-width: 600px) {
+  .projects__flex-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 900px) {
+  .projects__flex-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/*# sourceMappingURL=index.css.map */

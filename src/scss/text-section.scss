@@ -1,0 +1,48 @@
+@import 'configs-default';
+@import 'colors-dark';
+@import 'colors-light';
+
+.text-content {
+    display: grid;
+    max-width: 320px;
+    height: $height-section-sm;
+    margin: 0 auto;
+    padding: $padding-section;
+    place-content: center;
+    text-align: justify;
+}
+
+.dark {
+    .text-content{
+        color: $color-dark-1;
+        > .text {
+            padding: 10px;
+            border: 2px solid $color-dark-4;
+            box-shadow: 9px 9px 0px $color-dark-4;
+        }
+    }
+}
+
+.light {
+    .text-content{
+        color: $color-light-5;
+        > .text {
+            padding: 10px;
+            border: 2px solid $color-light-4;
+            box-shadow: 9px 9px 0px $color-light-4;
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .text-content {
+        max-width: 380px;
+    }
+}
+
+@media (min-width: 700px) {
+    .text-content {
+        height: $height-section-lg;
+        max-width: 600px;
+    }
+}

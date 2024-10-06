@@ -1,0 +1,56 @@
+@import 'colors-dark';
+@import 'colors-light';
+
+.icons-knowledge {
+    display: flex;
+    height: 20vh;
+    justify-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.icons-knowledge__flex-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icons-knowledge__icon {
+    width: 50px;
+}
+
+.icons-knowledge__icon-name {
+    text-transform: uppercase;
+}
+
+.dark {
+    .icons-knowledge__icon-name {
+        color: $color-dark-2;
+    }
+}
+
+.light {
+    .icons-knowledge__icon-name {
+        color: $color-light-4;
+    }
+}
+
+@media (min-width: 600px) {
+    .icons-knowledge {
+        height: 30vh;
+        gap: 30px;
+    }
+
+    .icons-knowledge__icon {
+        width: 80px;
+    }
+}
+
+@media (min-width: 900px) {
+    .icons-knowledge__icon {
+        width: 100px;
+    }
+}

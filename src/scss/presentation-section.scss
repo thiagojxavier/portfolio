@@ -1,0 +1,107 @@
+@import 'configs-default';
+@import 'colors-dark';
+@import 'colors-light';
+
+.presentation {
+    height: $height-section-lg;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    .presentation__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+        text-align: center;
+        .presentation__phrase {
+            max-width: 320px;
+        }
+    }
+    .presentation__right {
+        border: 5px solid $color-dark-4;
+        .presentation__image {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+}
+
+.dark {
+    .presentation__left {
+        text-align: center;
+        .presentation__title {
+            color: $color-dark-2;
+        };
+        .presentation__equal {
+            color: $color-dark-3;
+        };
+        .presentation__phrase {
+            color: $color-dark-5;
+        }
+    }
+
+    .presentation__right {
+        background-image: linear-gradient(to bottom right, 
+            #272729,
+            #a15e53,
+            #B08A5A,
+            #9F8F7B,
+            #736A54
+        );
+        border: 5px solid $color-dark-3;
+    }
+}
+
+.light {
+    .presentation__left {
+        .presentation__title {
+            color: $color-light-2;
+        };
+        .presentation__equal {
+            color: $color-light-3;
+        };
+        .presentation__phrase {
+            color: $color-light-4;
+        }
+    }
+
+    .presentation__right {
+        background-image: linear-gradient(to bottom left, 
+            #E4D4B6,
+            #F5F5F5,
+            #B08A5A,
+            #9F8F7B,
+            #736A54
+        );
+        border: 5px solid $color-light-4;
+    }
+}
+
+@media (min-width: 600px) {
+    .presentation {
+        .presentation__right {
+            .presentation__image {
+                width: 250px;
+                height: 300px;
+            }
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    .presentation {
+        flex-direction: row;
+        .presentation__left {
+            text-align: left;
+        }
+        .presentation__right {
+            .presentation__image {
+                width: 300px;
+                height: 350px;
+            }
+        }
+    }
+}

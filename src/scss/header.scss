@@ -1,0 +1,107 @@
+@import 'colors-dark';
+@import 'colors-light';
+
+.container {
+    font-size: 14px;
+    display: block;
+
+    .header {
+        display: flex;
+        text-transform: uppercase;
+        font-size: 1em;
+        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
+        > .header__theme-box-container {
+            display: flex;
+            gap: 5px;
+            > .header__theme-box {
+                width: 40px;
+                position: relative;
+                > .header__theme-box__btn {
+                    position: absolute;
+                    cursor: pointer;
+                    border-radius: 12px;
+                    width: 100%;
+                    height: 100%;
+                    transition: .4s;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        border-radius: 50%;
+                        width: 20px;
+                        height: 20px;
+                        left: 2px;
+                        bottom: 2px;
+                        transition: .4s;
+                    }
+                } 
+            }
+        }
+    }
+
+
+
+    .header__theme-box__box:checked + .header__theme-box__btn::before{
+        transform: translateX(calc(100% - 4px));
+    }
+
+    .header__theme-box__box[type="checkbox"] {
+        display: none;
+    }
+}
+
+.dark {
+    background-color: $color-dark-theme;
+
+    .header {
+        color: $color-dark-2;
+        .header__color-different {
+            color: $color-dark-1;
+        }
+    }
+
+    .header__theme-box {
+        > .header__theme-box__btn {
+            background-color: $color-dark-1;
+            &::before {
+                background-color: #272729;
+            }
+        } 
+    }
+}
+
+.light {
+    background-color: $color-light-theme;
+
+    .header {
+        color: $color-light-2;
+        .header__color-different {
+            color: $color-light-3;
+        }
+    }
+
+    .header__theme-box {
+        > .header__theme-box__btn {
+            &::before {
+                background-color: #272729;
+            }
+        } 
+    }
+
+    input:checked + .header__theme-box__btn{
+        background-color: #E4D4B6;
+    }
+}
+
+@media (min-width: 600px) {
+    .container {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 900px) {
+    .container {
+        font-size: 20px;
+    }
+}
