@@ -113,18 +113,16 @@ export function App() {
           </div>
         </div>
       </section>
-      <section>
-        <h2>Contatos</h2>
-        Quer conversar? me contate, vamos conversar
-        <div>
-          <button>
-            <img src="icon-gmail.svg" alt="" />
+      <section className="contacts">
+        <h2 className="contacts__title">Contatos</h2>
+        <p className="contacts__paragraph">Quer conversar? me contate, vamos conversar.</p>
+        <div className="contacts__btns-flex-wrapper">
+          <button className="contacts__btn">
+            <img className="contacts__btn-icon" src="icon-gmail.svg" alt="" />
             Email
           </button>
-        </div>
-        <div>
-          <button>
-            <img src="icon-linkedin.svg" alt="" />
+          <button className="contacts__btn">
+            <img className="contacts__btn-icon" src="icon-linkedin.svg" alt="" />
             LinkedIn
           </button>
         </div>
