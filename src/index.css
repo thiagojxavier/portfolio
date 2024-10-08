@@ -336,6 +336,9 @@
   text-transform: uppercase;
   padding: 0 10px;
 }
+.contacts__btn:hover {
+  transition: all 0.3s;
+}
 
 .contacts__btn-icon {
   width: 30px;
@@ -352,6 +355,10 @@
   color: #736A54;
   border: 2px solid #B08A5A;
 }
+.dark .contacts__btn:hover {
+  background-color: #B08A5A;
+  color: #F5F5F5;
+}
 
 .light .contacts__paragraph {
   color: #736A54;
@@ -359,6 +366,10 @@
 .light .contacts__btn {
   color: #736A54;
   border: 2px solid #736A54;
+}
+.light .contacts__btn:hover {
+  background-color: #B08A5A;
+  color: #272729;
 }
 
 @media (min-width: 600px) {
@@ -370,6 +381,86 @@
     width: 50px;
   }
 }
+.curriculum {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+}
+
+.curriculum__title {
+  text-transform: uppercase;
+}
+
+.curriculum__btn {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  justify-content: center;
+  width: 120px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  gap: 5px;
+}
+.curriculum__btn:hover {
+  transition: all 0.3s;
+}
+
+.curriculum__btn__icon {
+  width: 30px;
+}
+
+.dark .curriculum__title {
+  color: #E4D4B6;
+}
+.dark .curriculum__btn {
+  background-color: #E4D4B6;
+  color: #736A54;
+  border: 2px solid #B08A5A;
+}
+.dark .curriculum__btn:hover {
+  background-color: #B08A5A;
+  color: #F5F5F5;
+}
+
+.light .curriculum__title {
+  color: #272729;
+}
+.light .curriculum__btn {
+  color: #736A54;
+  border: 2px solid #736A54;
+}
+.light .curriculum__btn:hover {
+  background-color: #B08A5A;
+  color: #272729;
+}
+
+@media (min-width: 600px) {
+  .curriculum__btn {
+    width: 200px;
+    padding: 10px 10px;
+    gap: 30px;
+  }
+  .contacts__btn-icon {
+    width: 30px;
+  }
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 10vh;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.dark .footer {
+  color: #F5F5F5;
+}
+
 * {
   margin: 0;
   padding: 0;

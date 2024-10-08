@@ -127,16 +127,19 @@ export function App() {
           </button>
         </div>
       </section>
-      <section>
-        <h2>Currículo</h2>
-        <div>
+      <section className="curriculum">
+        <h2 className="curriculum__title">Currículo</h2>
+        <div className="curriculum__preview">
 
         </div>
-        <button>Download CV</button>
+        <button className="curriculum__btn">
+          <img className="curriculum__btn__icon" src="btn-download.png" alt="Botão de baixar currículo" />
+          Download
+        </button>
       </section>
-      <footer>
-        <p>Voce chegou ao fim</p>
-        <p>Desenvolvido por mim</p>
+      <footer className="footer">
+        <p>Você chegou ao fim!</p>
+        <p>Desenvolvido por thiagodev</p>
       </footer>
     </div>
   )

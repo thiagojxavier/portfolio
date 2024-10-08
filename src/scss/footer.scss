@@ -1,0 +1,17 @@
+@import 'colors-dark';
+@import 'colors-light';
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 10vh;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+.dark {
+    .footer {
+        color: $color-dark-2;
+    }
+}
