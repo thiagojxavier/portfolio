@@ -122,15 +122,23 @@ export function App() {
       <section className="contacts">
         <h2 className="contacts__title">Contatos</h2>
         <p className="contacts__paragraph">Quer conversar? me contate, vamos conversar.</p>
-        <div className="contacts__btns-flex-wrapper">
-          <button className="contacts__btn">
-            <img className="contacts__btn-icon" src="/icons/icon-gmail.svg" alt="" />
-            Email
-          </button>
-          <button className="contacts__btn">
-            <img className="contacts__btn-icon" src="/icons/icon-linkedin.svg" alt="" />
-            LinkedIn
-          </button>
+        <div className="contacts__flex-wrapper">
+            <div className="contacts__contact">
+              <img className="contacts__contact-icon" src="/icons/icon-gmail.svg" alt="" />
+              dejesusxavierthiago@gmail.com
+            </div>
+            <div className="contacts__contact">
+              <img className="contacts__contact-icon" src="/icons/icon-linkedin.svg" alt="" />
+              Thiago De Jesus Xavier
+            </div>
+          <div className="contacts__contact">
+            <img className="contacts__contact-icon" src="/icons/icon-telefone.png" alt="" />
+            (77) 99825-7462
+          </div>
+            <div className="contacts__contact">
+              <img className="contacts__contact-icon" src="/icons/icon-github.png" alt="" />
+              Thiago De Jesus Xavier thiagojxavier
+            </div>
         </div>
       </section>
       <section className="curriculum">

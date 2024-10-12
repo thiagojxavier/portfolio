@@ -5,38 +5,37 @@
 .contacts {
     display: grid;
     place-content: center;
-    height: $height-section-sm;
+    height: $height-section-lg;
     text-align: center;
     gap: 30px;
-    padding: $padding-section;
+    margin-bottom: $margin-bottom;
 }
 
 .contacts__title {
     text-transform: uppercase;
 }
 
-.contacts__btns-flex-wrapper {
+.contacts__flex-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
-.contacts__btn {
-    width: 120px;
+.contacts__contact {
+    width: 280px;
     display: flex;
-    justify-content: space-evenly;
+    font-size: 14px;
+    justify-content: space-between;
     align-items: center;
     gap: 5px;
-    cursor: pointer;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 0 10px;
-    &:hover {
-        transition: all .3s;
-    }
+    font-weight: 500;
+    padding: 5px;
 }
 
-.contacts__btn-icon {
+.contacts__contact-icon {
     width: 30px;
 }
 
@@ -49,14 +48,10 @@
         color: $color-dark-2;
     }
 
-    .contacts__btn {
-        background-color: $color-dark-1;
+    .contacts__contact {
+        background-color: $color-dark-2;
         color: $color-dark-4;
-        border: 2px solid $color-dark-3;
-        &:hover {
-            background-color: $color-dark-3;
-            color: $color-dark-2;
-        }
+        border-bottom: 2px solid $color-dark-3;
     }
 }
 
@@ -65,23 +60,20 @@
         color: $color-light-4;
     }
 
-    .contacts__btn {
+    .contacts__contact {
         color: $color-light-4;
-        border: 2px solid $color-light-4;
-        &:hover {
-            background-color: $color-light-3;
-            color: $color-light-2;
-        }
+        border-bottom: 2px solid $color-light-4;
     }
 }
 
 @media (min-width: 600px) {
-    .contacts__btn {
-        width: 200px;
-        padding: 10px 10px;
+    .contacts__contact {
+        width: 400px;
+        font-size: 18px;
+        padding: 10px;
     }
 
-    .contacts__btn-icon {
+    .contacts__contact-icon {
         width: 50px;
     }
 }

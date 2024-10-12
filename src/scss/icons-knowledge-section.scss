@@ -1,3 +1,4 @@
+@import 'configs-default';
 @import 'colors-dark';
 @import 'colors-light';
 
@@ -9,7 +10,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: $margin-bottom;
 }
 
 .icons-knowledge__flex-wrapper {
