@@ -5,6 +5,7 @@
 .presentation {
     height: $height-section-lg;
     display: flex;
+    padding-top: 30px;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -82,6 +83,7 @@
 
 @media (min-width: 600px) {
     .presentation {
+        padding-top: 60px;
         .presentation__right {
             .presentation__image {
                 width: 250px;

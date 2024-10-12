@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 10vh;
+    height: 5vh;
     text-transform: uppercase;
     padding: 10px;
 }
@@ -13,5 +13,16 @@
 .dark {
     .footer {
         color: $color-dark-2;
+        .footer__color-different {
+            color: $color-dark-1;
+        }
+    }
+}
+
+.light {
+    .footer {
+        .footer__color-different {
+            color: $color-dark-3;
+        }
     }
 }

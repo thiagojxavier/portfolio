@@ -12,13 +12,20 @@
     text-align: justify;
 }
 
+.highlighted-text {
+    font-weight: 700;
+}
+
 .dark {
     .text-content{
-        color: $color-dark-1;
+        color: $color-dark-5;
         > .text {
             padding: 10px;
             border: 2px solid $color-dark-4;
             box-shadow: 9px 9px 0px $color-dark-4;
+            > .highlighted-text {
+                color: $color-dark-1;
+            }
         }
     }
 }
@@ -30,6 +37,9 @@
             padding: 10px;
             border: 2px solid $color-light-4;
             box-shadow: 9px 9px 0px $color-light-4;
+            > .highlighted-text {
+                color: $color-light-4;
+            }
         }
     }
 }
