@@ -4,11 +4,11 @@
 
 .contacts {
     display: grid;
+    padding: 100px 0;
     place-content: center;
-    height: $height-section-lg;
     text-align: center;
     gap: 30px;
-    margin-bottom: $margin-bottom;
+    margin-bottom: 50px;
 }
 
 .contacts__title {
@@ -40,6 +40,10 @@
 }
 
 .dark {
+    .contacts {
+        background-image: linear-gradient(to right, $color-dark-theme-2, $color-dark-theme-3);
+    }
+
     .contacts__title {
         color: $color-dark-1;
     }
@@ -56,6 +60,10 @@
 }
 
 .light  {
+    .contacts {
+        background-image: linear-gradient(to right, $color-light-theme-2, $color-light-theme-3);
+    }
+
     .contacts__paragraph {
         color: $color-light-4;
     }

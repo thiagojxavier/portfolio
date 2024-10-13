@@ -35,12 +35,20 @@
 }
 
 .dark {
+    .icons-knowledge {
+        background-image: linear-gradient(to left, $color-dark-theme-2, $color-dark-theme-3);
+    }
+
     .icons-knowledge__icon-name {
         color: $color-dark-2;
     }
 }
 
 .light {
+    .icons-knowledge {
+        background-image: linear-gradient(to left, $color-light-theme-2, $color-light-theme-3);
+    }
+
     .icons-knowledge__icon-name {
         color: $color-light-4;
     }

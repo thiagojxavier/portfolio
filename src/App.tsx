@@ -146,13 +146,15 @@ export function App() {
         <div className="curriculum__preview">
           <img src="/curriculum/curriculum-preview.png" alt="Prévia do currículo" />
         </div>
-        <button className="curriculum__btn">
-          <img className="curriculum__btn__icon" src="btn-download.png" alt="Botão de baixar currículo" />
-          Download
-        </button>
+        <a href="/curriculum/curriculum.pdf" download={'currículo.pdf'}>
+          <button className="curriculum__btn">
+            <img className="curriculum__btn__icon" src="btn-download.png" alt="Botão de baixar currículo" />
+            Download
+          </button>
+        </a>
       </section>
       <footer className="footer">
-        <p>Desenvolvido por thiago<span className="footer__color-different">dev</span></p>
+        <p>© 2024 - Code by Thiago<span className="footer__color-different">dev</span></p>
       </footer>
     </div>
   )

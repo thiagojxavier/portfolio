@@ -13,6 +13,7 @@
 .dark {
     .footer {
         color: $color-dark-2;
+        background-image: linear-gradient(to left, $color-dark-theme-2, $color-dark-theme-3);
         .footer__color-different {
             color: $color-dark-1;
         }
@@ -21,6 +22,7 @@
 
 .light {
     .footer {
+        background-image: linear-gradient(to left, $color-light-theme-2, $color-light-theme-3);
         .footer__color-different {
             color: $color-dark-3;
         }
