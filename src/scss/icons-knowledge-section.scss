@@ -4,24 +4,23 @@
 
 .icons-knowledge {
     display: flex;
-    height: 20vh;
+    padding: 20px;
     justify-items: center;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 10px;
     margin-bottom: $margin-bottom;
-    overflow: hidden;
 }
 
 .icons-knowledge__flex-wrapper {
     display: flex;
-    overflow: hidden;
     flex-direction: column;
     align-items: center;
     filter: grayscale(50%);
-    animation: rightToLeft 2s;
-    animation-range: entry 0% cover 30%;
+    animation: toEmerge2;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
 }
 
 .icons-knowledge__flex-wrapper:hover {
@@ -72,13 +71,5 @@
 @media (min-width: 900px) {
     .icons-knowledge__icon {
         width: 100px;
-    }
-}
-
-@keyframes rightToLeft {
-    0% {
-        transform: translateX(1000px);
-    } 100% {
-        transform: translateX(0);
     }
 }

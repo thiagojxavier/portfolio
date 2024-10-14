@@ -1,16 +1,18 @@
 @import 'configs-default';
 @import 'colors-dark';
 @import 'colors-light';
+@import 'animations';
 
 .text-content {
     display: grid;
+    overflow: hidden;
     max-width: 320px;
     height: $height-section-sm;
     margin: 0 auto;
     padding: $padding-section;
     place-content: center;
     text-align: justify;
-    animation: ani2 1.3s;
+    animation: toEmerge3 1.3s;
 }
 
 .highlighted-text {
@@ -58,10 +60,3 @@
     }
 }
 
-@keyframes ani2 {
-    0% {
-        transform: translateX(300px) translateY(100px);
-    } 100% {
-        transform: translateX(0) translateY(0);
-    }
-}

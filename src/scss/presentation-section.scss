@@ -1,11 +1,12 @@
 @import 'configs-default';
 @import 'colors-dark';
 @import 'colors-light';
+@import 'animations';
 
 .presentation {
-    height: $height-section-lg;
+    padding: 60px 0;
+    overflow: hidden;
     display: flex;
-    padding-top: 30px;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -13,7 +14,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 10px;
+        padding: 50px;
         text-align: center;
         animation: LeftToRight 1s;
         .presentation__phrase {
@@ -106,6 +107,7 @@
 @media (min-width: 900px) {
     .presentation {
         flex-direction: row;
+        padding: 150px 0;
         .presentation__left {
             text-align: left;
         }
@@ -118,14 +120,3 @@
     }
 }
 
-@keyframes LeftToRight {
-    0% {
-        transform: translateX(-100vw);
-        opacity: 0;
-    } 50% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(0);
-    }
-}

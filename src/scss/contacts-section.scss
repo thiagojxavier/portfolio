@@ -1,6 +1,7 @@
 @import 'configs-default';
 @import 'colors-dark';
 @import 'colors-light';
+@import 'animations';
 
 .contacts {
     display: grid;
@@ -98,14 +99,5 @@
 
     .contacts__contact-icon {
         width: 50px;
-    }
-}
-
-@keyframes opacityApear {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
     }
 }
