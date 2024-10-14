@@ -45,6 +45,7 @@
 
 .curriculum__btn__icon {
     width: 30px;
+    animation: download 2s ease-in-out infinite forwards;
 }
 
 .dark {
@@ -99,5 +100,13 @@
 
     .contacts__btn-icon {
         width: 30px;
+    }
+}
+
+@keyframes download {
+    from {
+        transform: translateY(-5px);
+    } to {
+        transform: translateY(0);
     }
 }

@@ -15,12 +15,14 @@
         justify-content: center;
         padding: 10px;
         text-align: center;
+        animation: LeftToRight 1s;
         .presentation__phrase {
             max-width: 320px;
         }
     }
     .presentation__right {
         border: 5px solid $color-dark-4;
+        animation: LeftToRight 1.2s;
         .presentation__image {
             width: 200px;
             height: 250px;
@@ -113,5 +115,17 @@
                 height: 350px;
             }
         }
+    }
+}
+
+@keyframes LeftToRight {
+    0% {
+        transform: translateX(-100vw);
+        opacity: 0;
+    } 50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
     }
 }

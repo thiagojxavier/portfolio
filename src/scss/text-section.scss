@@ -10,6 +10,7 @@
     padding: $padding-section;
     place-content: center;
     text-align: justify;
+    animation: ani2 1.3s;
 }
 
 .highlighted-text {
@@ -54,5 +55,13 @@
     .text-content {
         height: $height-section-lg;
         max-width: 600px;
+    }
+}
+
+@keyframes ani2 {
+    0% {
+        transform: translateX(300px) translateY(100px);
+    } 100% {
+        transform: translateX(0) translateY(0);
     }
 }
