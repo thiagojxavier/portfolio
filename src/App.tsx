@@ -1,6 +1,8 @@
 import { Moon, Sun } from "lucide-react";
 import { useState } from "react";
 import { IconKnowledge } from "./components/IconKnowledge";
+import { MeansContact } from "./components/MeansContact";
+import { Project } from "./components/Project";
 
 export function App() {
   const [theme, setTheme] = useState(() => {
@@ -12,6 +14,8 @@ export function App() {
 
     return 'dark';
   });
+
+  // Tenho que passar um estado para o filho que será ativado quando passar o mouse e então o modal receberá a imagem e o link e quando tirado ele reseta
 
   function changeTheme() {
     if(theme === 'dark') {
@@ -56,39 +60,19 @@ export function App() {
           highlighted-text">constantemente buscando aprimorar minhas habilidades e expandir meu conhecimento</span>. Estou sempre em busca de novos desafios e oportunidades para crescer e inovar.</p>
       </section>
       <section className="icons-knowledge">
-        <IconKnowledge imgLink={"/icons/icon-html.svg"} imgAlt={"Icone de HTML"} imgName={"Html"}/>
-        <div className="icons-knowledge__flex-wrapper">
-          <img className="icons-knowledge__icon" src="/icons/icon-css.svg" alt="Icone de CSS" />
-          <p className="icons-knowledge__icon-name">Css</p>
-        </div>
-        <div className="icons-knowledge__flex-wrapper">
-          <img className="icons-knowledge__icon" src="/icons/icon-javascript.svg" alt="Icone de Javascript" />
-          <p className="icons-knowledge__icon-name">Javascript</p>
-        </div>
-        <div className="icons-knowledge__flex-wrapper">
-          <img className="icons-knowledge__icon" src="/icons/icon-sass.svg" alt="Icone de SASS" />
-          <p className="icons-knowledge__icon-name">Sass</p>
-        </div>
-        <div className="icons-knowledge__flex-wrapper">
-          <img className="icons-knowledge__icon" src="/icons/icon-tailwind.svg" alt="Icone de Tailwind" />
-          <p className="icons-knowledge__icon-name">Tailwind</p>
-        </div>
-        <div className="icons-knowledge__flex-wrapper">
-          <img className="icons-knowledge__icon" src="/icons/icon-typescript.svg" alt="Icone de Typescript" />
-          <p className="icons-knowledge__icon-name">Typescript</p>
-        </div>
-        <div className="icons-knowledge__flex-wrapper">
-          <img className="icons-knowledge__icon" src="/icons/icon-git.svg" alt="Icone de Git" />
-          <p className="icons-knowledge__icon-name">Git</p>
-        </div>
-        <div className="icons-knowledge__flex-wrapper">
-          <img className="icons-knowledge__icon" src="/icons/icon-react.svg" alt="Icone de React" />
-          <p className="icons-knowledge__icon-name">React</p>
-        </div>
+        <IconKnowledge imgLink="/icons/icon-html.svg" imgAlt="Icone de HTML" imgName="Html"/>
+        <IconKnowledge imgLink="/icons/icon-css.svg" imgAlt="Icone de CSS" imgName="Css"/>
+        <IconKnowledge imgLink="/icons/icon-javascript.svg" imgAlt="Icone de Javascript" imgName="Javascript"/>
+        <IconKnowledge imgLink="/icons/icon-sass.svg" imgAlt="Icone de SASS" imgName="Sass"/>
+        <IconKnowledge imgLink="/icons/icon-tailwind.svg" imgAlt="Icone de Tailwind" imgName="Tailwind"/>
+        <IconKnowledge imgLink="/icons/icon-typescript.svg" imgAlt="Icone de Typescript" imgName="Typescript"/>
+        <IconKnowledge imgLink="/icons/icon-git.svg" imgAlt="Icone de Git" imgName="Git"/>
+        <IconKnowledge imgLink="/icons/icon-react.svg" imgAlt="Icone de React" imgName="React"/>
       </section>
       <section className="projects">
         <h2 className="projects-title">Projetos</h2>
         <div className="projects__flex-wrapper">
+          <Project name="Calculadora" languages="HTML, CSS, JS" imgLink="/projects/calculadora.png" imgAlt="Imagem do site da calculadora"/>
           <div className="projects__project">
             <h3 className="project__name">Nome do projeto</h3>
             <p className="project__paragraph">Linguagens HTML, CSS, JS</p>
@@ -130,22 +114,10 @@ export function App() {
         <h2 className="contacts__title">Contatos</h2>
         <p className="contacts__paragraph">Quer conversar? me contate, vamos conversar.</p>
         <div className="contacts__flex-wrapper">
-            <div className="contacts__contact">
-              <img className="contacts__contact-icon" src="/icons/icon-gmail.svg" alt="" />
-              dejesusxavierthiago@gmail.com
-            </div>
-            <div className="contacts__contact">
-              <img className="contacts__contact-icon" src="/icons/icon-linkedin.svg" alt="" />
-              Thiago De Jesus Xavier
-            </div>
-          <div className="contacts__contact">
-            <img className="contacts__contact-icon" src="/icons/icon-telefone.png" alt="" />
-            (77) 99825-7462
-          </div>
-            <div className="contacts__contact">
-              <img className="contacts__contact-icon" src="/icons/icon-github.png" alt="" />
-              Thiago De Jesus Xavier thiagojxavier
-            </div>
+          <MeansContact imgLink="/icons/icon-gmail.svg" imgAlt="Ícone do Gmail" contact="dejesusxavierthiago@gmail.com"/>
+          <MeansContact imgLink="/icons/icon-linkedin.svg" imgAlt="Ícone do LinkedIn" contact="Thiago De Jesus Xavier"/>
+          <MeansContact imgLink="/icons/icon-github.png" imgAlt="Ícone do GitHub" contact="Thiago De Jesus Xavier thiagojxavier"/>
+          <MeansContact imgLink="/icons/icon-telefone.png" imgAlt="Ícone do telefone" contact="(77) 99825-7462"/>
         </div>
       </section>
       <section className="curriculum">
