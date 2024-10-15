@@ -1,0 +1,71 @@
+@import 'colors-dark';
+@import 'colors-light';
+
+.modal-projects-container {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.829);
+}
+
+.modal-projects {
+    position: fixed;
+    inset: 0;
+    width: 600px;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-projects__flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-projects__img-project {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.modal-projects__btn {
+    padding: 3px 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.dark {
+    .modal-projects {
+        background-color: $color-dark-4;
+    }
+
+    .modal-projects__btn {
+        background-color: $color-dark-1;
+    }
+}
+
+.light {
+    .modal-projects {
+        background-color: $color-light-5;
+    }
+
+    .modal-projects__btn {
+        background-color: $color-light-1;
+    }
+}
+
+@media (min-width: 1200px) {
+    .modal-projects {
+        width: 800px;
+        height: 600px;
+    }
+
+    .modal-projects__btn {
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+}

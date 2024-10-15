@@ -1,16 +1,26 @@
 import { Moon, Sun } from "lucide-react";
 import { useState } from "react";
+import { IconKnowledge } from "./components/IconKnowledge";
 
 export function App() {
-  const [theme, setTheme] = useState('dark');
-  const presentationTitle = `"Onde a criatividade encontra o propósito, surgem soluções revolucionárias."`;
+  const [theme, setTheme] = useState(() => {
+    const themePage = localStorage.getItem('theme-page');
+
+    if(themePage === 'light') {
+      return 'light';
+    }
+
+    return 'dark';
+  });
 
   function changeTheme() {
     if(theme === 'dark') {
+      localStorage.setItem('theme-page', 'light');
       setTheme('light');
       return
     } 
 
+    localStorage.setItem('theme-page', 'dark');
     setTheme('dark');
   }
 
@@ -32,7 +42,7 @@ export function App() {
       <section className="presentation">
           <div className="presentation__left">
               <h1 className="presentation__title">Front_End Developer <span className="presentation__equal">=</span></h1>
-              <p className="presentation__phrase">{presentationTitle}</p>
+              <p className="presentation__phrase">"Onde a criatividade encontra o propósito, surgem soluções revolucionárias."</p>
           </div>
           <div className="presentation__right">
             <img className="presentation__image" src={theme === "dark" ? "/presentation-imgs/presentation-dark.png" : "/presentation-imgs/presentation-light.png"}/>
@@ -46,10 +56,7 @@ export function App() {
           highlighted-text">constantemente buscando aprimorar minhas habilidades e expandir meu conhecimento</span>. Estou sempre em busca de novos desafios e oportunidades para crescer e inovar.</p>
       </section>
       <section className="icons-knowledge">
-        <div className="icons-knowledge__flex-wrapper">
-          <img className="icons-knowledge__icon" src="/icons/icon-html.svg" alt="Icone de HTML" />
-          <p className="icons-knowledge__icon-name">Html</p>
-        </div>
+        <IconKnowledge imgLink={"/icons/icon-html.svg"} imgAlt={"Icone de HTML"} imgName={"Html"}/>
         <div className="icons-knowledge__flex-wrapper">
           <img className="icons-knowledge__icon" src="/icons/icon-css.svg" alt="Icone de CSS" />
           <p className="icons-knowledge__icon-name">Css</p>
@@ -152,6 +159,16 @@ export function App() {
             Download
           </button>
         </a>
+      </section>
+      <section className="modal-projects-container">
+        <div className="modal-projects">
+          <div className="modal-projects__flex-wrapper">
+            <img className="modal-projects__img-project" src="/curriculum/curriculum-full.png" alt="" />
+            <button className="modal-projects__btn">
+              <a href="#">Ir</a>
+            </button>
+          </div>
+        </div>
       </section>
       <footer className="footer">
         <p>© 2024 - Code by Thiago<span className="footer__color-different">dev</span></p>

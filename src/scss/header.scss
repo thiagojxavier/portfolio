@@ -98,6 +98,7 @@
 
     .header__theme-box {
         > .header__theme-box__btn {
+            background-color: $color-light-3;
             &::before {
                 background-color: $color-light-2;
             }
@@ -105,7 +106,7 @@
     }
 
     input:checked + .header__theme-box__btn{
-        background-color: $color-light-5;
+        background-color: $color-light-3;
     }
 }
 
