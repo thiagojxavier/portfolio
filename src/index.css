@@ -860,8 +860,12 @@
 
 .modal-projects__btn {
   padding: 3px 10px;
+  width: 200px;
   cursor: pointer;
   border: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: black;
 }
 
 .dark .modal-projects {
@@ -889,6 +893,10 @@
   .modal-projects__btn {
     padding: 5px 10px;
     cursor: pointer;
+  }
+  .modal-projects__btn:hover {
+    background-color: #736A54;
+    color: #E4D4B6;
   }
 }
 @media (min-width: 900px) {
@@ -1019,6 +1027,10 @@
   padding: 0;
   font-family: "Inter", sans-serif;
   text-decoration: none;
+}
+
+a:active {
+  color: black;
 }
 
 /*# sourceMappingURL=index.css.map */

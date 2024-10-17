@@ -3,6 +3,11 @@ import { useState } from "react";
 import { IconKnowledge } from "./components/IconKnowledge";
 import { MeansContact } from "./components/MeansContact";
 import { Project } from "./components/Project";
+import { Modal } from "./components/Modal";
+
+interface linksSitesProps {
+  [key: string]: string;
+}
 
 export function App() {
   const [theme, setTheme] = useState(() => {
@@ -16,18 +21,21 @@ export function App() {
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageSrcModal, setImageSrcModal] = useState('');
+  const linksSites:linksSitesProps = {
+    calculadora: 'https://www.google.com'
+  }
+  const [link, setLink] = useState('')
 
   function handleModalOpening(event: React.MouseEvent<HTMLDivElement>) {
-    const id = event.currentTarget.id
-    setImageSrcModal(`/projects/${id.toLowerCase()}.png`)
+    const id = event.currentTarget.id.toLowerCase()
+    setLink(id)
+    setImageSrcModal(`/projects/${id}.png`)
     setIsModalOpen(true);
   }
 
   function handleModalClosing() {
     setIsModalOpen(false);
   }
-
-  // Separar modal em um componente
 
   function changeTheme() {
     if(theme === 'dark') {
@@ -144,16 +152,7 @@ export function App() {
           </button>
         </a>
       </section>
-      <section className={isModalOpen ? "modal-projects-container modal-open" : "modal-projects-container"}>
-        <div className="modal-projects" onMouseLeave={handleModalClosing}>
-          <div className="modal-projects__flex-wrapper">
-            <img className="modal-projects__img-project" src={imageSrcModal} alt="" />
-            <button className="modal-projects__btn">
-              <a href="#">Ir</a>
-            </button>
-          </div>
-        </div>
-      </section>
+      <Modal modalOpen={isModalOpen} handleModalClose={handleModalClosing} imageSrc={imageSrcModal} href={linksSites[link]}/>
       <footer className="footer">
         <p>© 2024 - Code by Thiago<span className="footer__color-different">dev</span></p>
       </footer>

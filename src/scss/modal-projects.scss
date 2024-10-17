@@ -40,8 +40,12 @@
 
 .modal-projects__btn {
     padding: 3px 10px;
+    width: 200px;
     cursor: pointer;
     border: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: black;
 }
 
 .dark {
@@ -77,6 +81,11 @@
     .modal-projects__btn {
         padding: 5px 10px;
         cursor: pointer;
+    }
+
+    .modal-projects__btn:hover {
+        background-color: $color-light-4;
+        color: $color-light-1;
     }
 }
 
