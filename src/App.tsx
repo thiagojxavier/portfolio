@@ -14,8 +14,20 @@ export function App() {
 
     return 'dark';
   });
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [imageSrcModal, setImageSrcModal] = useState('');
 
-  // Tenho que passar um estado para o filho que será ativado quando passar o mouse e então o modal receberá a imagem e o link e quando tirado ele reseta
+  function handleModalOpening(event: React.MouseEvent<HTMLDivElement>) {
+    const id = event.currentTarget.id
+    setImageSrcModal(`/projects/${id.toLowerCase()}.png`)
+    setIsModalOpen(true);
+  }
+
+  function handleModalClosing() {
+    setIsModalOpen(false);
+  }
+
+  // Separar modal em um componente
 
   function changeTheme() {
     if(theme === 'dark') {
@@ -72,7 +84,7 @@ export function App() {
       <section className="projects">
         <h2 className="projects-title">Projetos</h2>
         <div className="projects__flex-wrapper">
-          <Project name="Calculadora" languages="HTML, CSS, JS" imgLink="/projects/calculadora.png" imgAlt="Imagem do site da calculadora"/>
+          <Project name="Calculadora" languages="HTML, CSS, JS" imgLink="/projects/calculadora.png" imgAlt="Imagem do site da calculadora" modalOpen={handleModalOpening}/>
           <div className="projects__project">
             <h3 className="project__name">Nome do projeto</h3>
             <p className="project__paragraph">Linguagens HTML, CSS, JS</p>
@@ -123,19 +135,19 @@ export function App() {
       <section className="curriculum">
         <h2 className="curriculum__title">Currículo</h2>
         <div className="curriculum__preview">
-          <img src="/curriculum/curriculum-preview.png" alt="Prévia do currículo" />
+          <img id="curriculum-full" src="/curriculum/curriculum-preview.png" alt="Prévia do currículo" onMouseOver={handleModalOpening}/>
         </div>
         <a href="/curriculum/curriculum.pdf" download={'currículo.pdf'}>
           <button className="curriculum__btn">
-            <img className="curriculum__btn__icon" src="btn-download.png" alt="Botão de baixar currículo" />
+            <img className="curriculum__btn__icon" src="btn-download.png" alt="Botão de baixar currículo"/>
             Download
           </button>
         </a>
       </section>
-      <section className="modal-projects-container">
-        <div className="modal-projects">
+      <section className={isModalOpen ? "modal-projects-container modal-open" : "modal-projects-container"}>
+        <div className="modal-projects" onMouseLeave={handleModalClosing}>
           <div className="modal-projects__flex-wrapper">
-            <img className="modal-projects__img-project" src="/curriculum/curriculum-full.png" alt="" />
+            <img className="modal-projects__img-project" src={imageSrcModal} alt="" />
             <button className="modal-projects__btn">
               <a href="#">Ir</a>
             </button>
