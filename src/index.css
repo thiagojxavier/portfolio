@@ -150,7 +150,7 @@
 }
 @keyframes LeftToRight {
   0% {
-    transform: translateX(-100vw);
+    transform: translateX(-50vw);
     opacity: 0;
   }
   50% {
@@ -301,7 +301,7 @@
 }
 @keyframes LeftToRight {
   0% {
-    transform: translateX(-100vw);
+    transform: translateX(-50vw);
     opacity: 0;
   }
   50% {
@@ -555,7 +555,7 @@
 }
 @keyframes LeftToRight {
   0% {
-    transform: translateX(-100vw);
+    transform: translateX(-50vw);
     opacity: 0;
   }
   50% {
@@ -705,7 +705,7 @@
 }
 @keyframes LeftToRight {
   0% {
-    transform: translateX(-100vw);
+    transform: translateX(-50vw);
     opacity: 0;
   }
   50% {
@@ -779,13 +779,12 @@
   color: #E4D4B6;
 }
 .dark .curriculum__btn {
-  background-color: #E4D4B6;
-  color: #736A54;
-  border: 2px solid #B08A5A;
+  background-color: #9F8F7B;
+  color: #F5F5F5;
+  border: 3px solid #9F8F7B;
 }
 .dark .curriculum__btn:hover {
-  background-color: #B08A5A;
-  color: #F5F5F5;
+  border: 3px solid #F5F5F5;
 }
 
 .light .curriculum__title {
@@ -793,11 +792,11 @@
 }
 .light .curriculum__btn {
   color: #736A54;
-  border: 2px solid #736A54;
+  border: 3px solid #E4D4B6;
+  background-color: #E4D4B6;
 }
 .light .curriculum__btn:hover {
-  background-color: #B08A5A;
-  color: #272729;
+  border: 3px solid #272729;
 }
 
 @media (min-width: 600px) {
@@ -822,27 +821,35 @@
   }
 }
 .modal-projects-container {
-  display: none;
+  display: flex;
   position: fixed;
   inset: 0;
-  width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.829);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
 }
 
 .modal-open {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 .modal-projects {
-  position: fixed;
-  inset: 0;
+  position: relative;
   width: 350px;
   height: 620px;
-  padding: 10px;
+  padding: 30px;
   top: 50%;
+  border-radius: 8px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.modal-open .modal-projects {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .modal-projects__flex-wrapper {
@@ -856,6 +863,7 @@
   height: 460px;
   object-fit: cover;
   margin-bottom: 10px;
+  border-radius: 8px;
 }
 
 .modal-projects__btn {
@@ -865,26 +873,46 @@
   border: none;
   text-transform: uppercase;
   font-weight: 500;
+  border-radius: 8px;
   color: black;
 }
 
+.modal-projects__btn:hover {
+  transition: all 0.5s;
+}
+
 .dark .modal-projects {
-  background-color: #736A54;
+  background-color: #1b1b1b;
+  border: 1px solid #E4D4B6;
+  box-shadow: 0 5px 40px #E4D4B6;
 }
 .dark .modal-projects__btn {
   background-color: #E4D4B6;
+  border: 1px solid #F5F5F5;
+}
+.dark .modal-projects__btn:hover {
+  background-color: #736A54;
+  color: #E4D4B6;
 }
 
 .light .modal-projects {
-  background-color: #9F8F7B;
+  background-color: #d6d5d5;
+  border: 1px solid #272729;
+  box-shadow: 0 5px 40px #E4D4B6;
 }
 .light .modal-projects__btn {
+  background-color: #272729;
+  color: #E4D4B6;
+  border: 1px solid #F5F5F5;
+}
+.light .modal-projects__btn:hover {
   background-color: #E4D4B6;
+  color: #272729;
 }
 
 @media (min-width: 720px) {
   .modal-projects {
-    width: 670px;
+    width: 600px;
     height: 500px;
   }
   .modal-projects__img-project {
@@ -893,10 +921,6 @@
   .modal-projects__btn {
     padding: 5px 10px;
     cursor: pointer;
-  }
-  .modal-projects__btn:hover {
-    background-color: #736A54;
-    color: #E4D4B6;
   }
 }
 @media (min-width: 900px) {
@@ -965,7 +989,7 @@
 }
 @keyframes LeftToRight {
   0% {
-    transform: translateX(-100vw);
+    transform: translateX(-50vw);
     opacity: 0;
   }
   50% {

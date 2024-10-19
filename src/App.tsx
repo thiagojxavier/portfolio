@@ -20,6 +20,7 @@ export function App() {
     return 'dark';
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalAnimation, setIsModalAnimation] = useState(false);
   const [imageSrcModal, setImageSrcModal] = useState('');
   const linksSites:linksSitesProps = {
     calculadora: 'https://www.google.com'
@@ -31,10 +32,12 @@ export function App() {
     setLink(id)
     setImageSrcModal(`/projects/${id}.png`)
     setIsModalOpen(true);
+    setTimeout(() => setIsModalAnimation(true), 200)
   }
 
   function handleModalClosing() {
-    setIsModalOpen(false);
+    setIsModalAnimation(false)
+    setTimeout(() => setIsModalOpen(false), 200);
   }
 
   function changeTheme() {
@@ -47,6 +50,8 @@ export function App() {
     localStorage.setItem('theme-page', 'dark');
     setTheme('dark');
   }
+
+  // Arrumar bug do tema, já que quando o tema é salvo como light no local storage na volta do usuário o botão volta para o tema escuro 
 
   return (
     <div className={theme === 'dark' ? 'container dark' : 'container light'}>
@@ -152,7 +157,7 @@ export function App() {
           </button>
         </a>
       </section>
-      <Modal modalOpen={isModalOpen} handleModalClose={handleModalClosing} imageSrc={imageSrcModal} href={linksSites[link]}/>
+      {isModalOpen && <Modal modalAnimation={isModalAnimation} handleModalClose={handleModalClosing} imageSrc={imageSrcModal} href={linksSites[link]}/>}
       <footer className="footer">
         <p>© 2024 - Code by Thiago<span className="footer__color-different">dev</span></p>
       </footer>

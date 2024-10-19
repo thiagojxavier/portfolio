@@ -2,28 +2,36 @@
 @import 'colors-light';
 
 .modal-projects-container {
-    display: none;
+    display: flex;
     position: fixed;
     inset: 0;
-    width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.829);
-}
-
-.modal-open {
-    display: block;
-}
-
-.modal-projects {
-    position: fixed;
-    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+  }
+  
+  .modal-open {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .modal-projects {
+    position: relative;
     width: 350px;
     height: 620px;
-    padding: 10px;
+    padding: 30px;
     top: 50%;
+    border-radius: 8px;
     left: 50%;
-    transform: translate(-50%, -50%);
-}
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: transform 0.3s ease;
+  }
+  
+  .modal-open .modal-projects {
+    transform: translate(-50%, -50%) scale(1);
+  }
 
 .modal-projects__flex-wrapper {
     display: flex;
@@ -36,6 +44,7 @@
     height: 460px;
     object-fit: cover;
     margin-bottom: 10px;
+    border-radius: 8px;
 }
 
 .modal-projects__btn {
@@ -45,32 +54,54 @@
     border: none;
     text-transform: uppercase;
     font-weight: 500;
+    border-radius: 8px;
     color: black;
+}
+
+.modal-projects__btn:hover {
+    transition: all .5s;
 }
 
 .dark {
     .modal-projects {
-        background-color: $color-dark-4;
+        background-color: $color-dark-theme;
+        border: 1px solid $color-dark-1;
+        box-shadow: 0 5px 40px $color-dark-1;
     }
 
     .modal-projects__btn {
         background-color: $color-dark-1;
+        border: 1px solid $color-dark-2;
+    }
+
+    .modal-projects__btn:hover {
+        background-color: $color-light-4;
+        color: $color-light-1;
     }
 }
 
 .light {
     .modal-projects {
-        background-color: $color-light-5;
+        background-color: $color-light-theme-2;
+        border: 1px solid $color-light-2;
+        box-shadow: 0 5px 40px $color-light-1;
     }
 
     .modal-projects__btn {
+        background-color: $color-light-2;
+        color: $color-light-1;
+        border: 1px solid $color-dark-2;
+    }
+
+    .modal-projects__btn:hover {
         background-color: $color-light-1;
+        color: $color-light-2;
     }
 }
 
 @media (min-width: 720px) {
     .modal-projects {
-        width: 670px;
+        width: 600px;
         height: 500px;
     }
 
@@ -81,11 +112,6 @@
     .modal-projects__btn {
         padding: 5px 10px;
         cursor: pointer;
-    }
-
-    .modal-projects__btn:hover {
-        background-color: $color-light-4;
-        color: $color-light-1;
     }
 }
 
