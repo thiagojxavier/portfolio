@@ -22,6 +22,7 @@ export function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalAnimation, setIsModalAnimation] = useState(false);
   const [imageSrcModal, setImageSrcModal] = useState('');
+
   const linksSites:linksSitesProps = {
     calculadora: 'https://www.google.com'
   }
@@ -51,8 +52,6 @@ export function App() {
     setTheme('dark');
   }
 
-  // Arrumar bug do tema, já que quando o tema é salvo como light no local storage na volta do usuário o botão volta para o tema escuro 
-
   return (
     <div className={theme === 'dark' ? 'container dark' : 'container light'}>
       <header className="header">
@@ -61,7 +60,11 @@ export function App() {
           <div className="header__theme-box-container">
             <Moon />
             <label htmlFor="theme" className="header__theme-box">
-              <input className="header__theme-box__box" type="checkbox" name="theme" id="theme" onChange={changeTheme}/>
+              {theme === 'dark' 
+              ? 
+                <input className="header__theme-box__box" type="checkbox" name="theme" id="theme" onChange={changeTheme}/>
+              :
+                <input className="header__theme-box__box" type="checkbox" name="theme" id="theme" onChange={changeTheme} checked/>}
               <span className="header__theme-box__btn"></span>
             </label>
             <Sun />
