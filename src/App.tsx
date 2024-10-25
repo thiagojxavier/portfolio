@@ -24,7 +24,8 @@ export function App() {
   const [imageSrcModal, setImageSrcModal] = useState('');
 
   const linksSites:linksSitesProps = {
-    calculadora: 'https://www.google.com'
+    calculadora: 'https://thiagojxavier.github.io/calculadora/',
+    todolist: 'https://thiagojxavier.github.io/to-do-list/'
   }
   const [link, setLink] = useState('')
 
@@ -101,13 +102,7 @@ export function App() {
         <h2 className="projects-title">Projetos</h2>
         <div className="projects__flex-wrapper">
           <Project name="Calculadora" languages="HTML, CSS, JS" imgLink="/projects/calculadora.png" imgAlt="Imagem do site da calculadora" modalOpen={handleModalOpening}/>
-          <div className="projects__project">
-            <h3 className="project__name">Nome do projeto</h3>
-            <p className="project__paragraph">Linguagens HTML, CSS, JS</p>
-            <div>
-              <img className="project__image" src="/icons/icon-html.svg" alt="Icone de HTML" />
-            </div>
-          </div>
+          <Project name="ToDoList" languages="HTML, CSS, JS" imgLink="/projects/todolist.png" imgAlt="Imagem do site da to-do-list" modalOpen={handleModalOpening}/>
           <div className="projects__project">
             <h3 className="project__name">Nome do projeto</h3>
             <p className="project__paragraph">Linguagens HTML, CSS, JS</p>
