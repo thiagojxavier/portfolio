@@ -16,14 +16,12 @@
         justify-content: center;
         padding: 50px;
         text-align: center;
-        animation: LeftToRight 1s;
         .presentation__phrase {
             max-width: 320px;
         }
     }
     .presentation__right {
         border: 5px solid $color-dark-4;
-        animation: LeftToRight 1.2s;
         .presentation__image {
             width: 200px;
             height: 250px;
@@ -95,7 +93,11 @@
 @media (min-width: 600px) {
     .presentation {
         padding-top: 60px;
+        .presentation__left {
+            animation: LeftToRight 1s;
+        }
         .presentation__right {
+            animation: LeftToRight 1.2s;
             .presentation__image {
                 width: 250px;
                 height: 300px;

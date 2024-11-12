@@ -12,7 +12,6 @@
     padding: $padding-section;
     place-content: center;
     text-align: justify;
-    animation: toEmerge3 1.3s;
 }
 
 .highlighted-text {
@@ -35,7 +34,7 @@
 
 .light {
     .text-content{
-        color: $color-light-5;
+        color: $color-light-4;
         > .text {
             padding: 10px;
             border: 2px solid $color-light-4;
@@ -50,6 +49,7 @@
 @media (min-width: 600px) {
     .text-content {
         max-width: 380px;
+        animation: toEmerge3 1.3s;
     }
 }
 

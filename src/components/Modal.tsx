@@ -1,5 +1,3 @@
-
-
 interface ModalProps {
     modalAnimation: boolean
   handleModalClose: (event: React.MouseEvent<HTMLDivElement>) => void

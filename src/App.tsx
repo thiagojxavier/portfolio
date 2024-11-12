@@ -19,22 +19,36 @@ export function App() {
 
     return 'dark';
   });
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalAnimation, setIsModalAnimation] = useState(false);
   const [imageSrcModal, setImageSrcModal] = useState('');
+  const [link, setLink] = useState('');
 
   const linksSites:linksSitesProps = {
     calculadora: 'https://thiagojxavier.github.io/calculadora/',
-    todolist: 'https://thiagojxavier.github.io/to-do-list/'
+    todolist: 'https://thiagojxavier.github.io/to-do-list/',
+    musicreactproject: 'https://music-react-player-six.vercel.app/',
+    relogio: 'https://thiagojxavier.github.io/relogio/',
+    palindrome: 'https://thiagojxavier.github.io/palindrome-checker/',
+    conversorfornumerosromanos: 'https://thiagojxavier.github.io/Roman-numeral-converter/',
+    telephonenumbervalidator: 'https://thiagojxavier.github.io/Validator-Phone/',
+    theuniverse: 'https://the-universe-l1uqxz7td-thiagojxaviers-projects.vercel.app/',
+    cashregister: 'https://thiagojxavier.github.io/cash-register/',
+    temperatura: 'https://thiagojxavier.github.io/Temperatura/',
+    pokedex: 'https://thiagojxavier.github.io/pokemon-search/',
+    album: 'https://thiagojxavier.github.io/album/',
+    tictactoe: 'https://thiagojxavier.github.io/tic-toc-toe/',
+    focas: 'https://thiagojxavier.github.io/seal-project/',
+    marte: 'https://page-login-self.vercel.app/'
   }
-  const [link, setLink] = useState('')
-
+  
   function handleModalOpening(event: React.MouseEvent<HTMLDivElement>) {
     const id = event.currentTarget.id.toLowerCase()
-    setLink(id)
-    setImageSrcModal(`/projects/${id}.png`)
+    setLink(id);
+    setImageSrcModal(`/projects/${id}.png`);
     setIsModalOpen(true);
-    setTimeout(() => setIsModalAnimation(true), 200)
+    setTimeout(() => setIsModalAnimation(true), 200);
   }
 
   function handleModalClosing() {
@@ -78,7 +92,7 @@ export function App() {
               <p className="presentation__phrase">"Onde a criatividade encontra o propósito, surgem soluções revolucionárias."</p>
           </div>
           <div className="presentation__right">
-            <img className="presentation__image" src={theme === "dark" ? "/presentation-imgs/presentation-dark.png" : "/presentation-imgs/presentation-light.png"}/>
+            <img className="presentation__image" src={theme === "dark" ? "/presentation-imgs/presentation-dark.png" : "/presentation-imgs/presentation-light.png"} alt="Photo profile"/>
           </div>
       </section>
       <section className="text-content">
@@ -101,36 +115,21 @@ export function App() {
       <section className="projects">
         <h2 className="projects-title">Projetos</h2>
         <div className="projects__flex-wrapper">
-          <Project name="Calculadora" languages="HTML, CSS, JS" imgLink="/projects/calculadora.png" imgAlt="Imagem do site da calculadora" modalOpen={handleModalOpening}/>
-          <Project name="ToDoList" languages="HTML, CSS, JS" imgLink="/projects/todolist.png" imgAlt="Imagem do site da to-do-list" modalOpen={handleModalOpening}/>
-          <div className="projects__project">
-            <h3 className="project__name">Nome do projeto</h3>
-            <p className="project__paragraph">Linguagens HTML, CSS, JS</p>
-            <div>
-              <img className="project__image" src="/icons/icon-html.svg" alt="Icone de HTML" />
-            </div>
-          </div>
-          <div className="projects__project">
-            <h3 className="project__name">Nome do projeto</h3>
-            <p className="project__paragraph">Linguagens HTML, CSS, JS</p>
-            <div>
-              <img className="project__image" src="/icons/icon-html.svg" alt="Icone de HTML" />
-            </div>
-          </div>
-          <div className="projects__project">
-            <h3 className="project__name">Nome do projeto</h3>
-            <p className="project__paragraph">Linguagens HTML, CSS, JS</p>
-            <div>
-              <img className="project__image" src="/icons/icon-html.svg" alt="Icone de HTML" />
-            </div>
-          </div>
-          <div className="projects__project">
-            <h3 className="project__name">Nome do projeto</h3>
-            <p className="project__paragraph">Linguagens HTML, CSS, JS</p>
-            <div>
-              <img className="project__image" src="/icons/icon-html.svg" alt="Icone de HTML" />
-            </div>
-          </div>
+          <Project name="Calculadora" languages="HTML, CSS, JavaScript" imgLink="/projects/calculadora.png" imgAlt="Imagem do site da calculadora" modalOpen={handleModalOpening}/>
+          <Project name="ToDoList" languages="HTML, CSS, JavaScript" imgLink="/projects/todolist.png" imgAlt="Imagem do site da to-do-list" modalOpen={handleModalOpening}/>
+          <Project name="MusicReactProject" languages="HTML, CSS, TypeScript, React, Tailwind" imgLink="/projects/musicreactproject.png" imgAlt="Imagem do site de música react" modalOpen={handleModalOpening}/>
+          <Project name="Relogio" languages="HTML, CSS, JavaScript" imgLink="/projects/relogio.png" imgAlt="Imagem do site relógio" modalOpen={handleModalOpening}/>
+          <Project name="Palindrome" languages="HTML, CSS, JavaScript" imgLink="/projects/palindrome.png" imgAlt="Imagem do site Palindrome" modalOpen={handleModalOpening}/>
+          <Project name="ConversorForNumerosRomanos" languages="HTML, CSS, JavaScript" imgLink="/projects/conversorfornumerosromanos.png" imgAlt="Imagem do site conversor para números romanos" modalOpen={handleModalOpening}/>
+          <Project name="TelephoneNumberValidator" languages="HTML, CSS, JavaScript" imgLink="/projects/telephonenumbervalidator.png" imgAlt="Imagem do site validar números de telefone americanos" modalOpen={handleModalOpening}/>
+          <Project name="TheUniverse" languages="HTML, CSS, JavaScript" imgLink="/projects/theuniverse.png" imgAlt="Imagem do site universe que trabalha o SPA(single page application)" modalOpen={handleModalOpening}/>
+          <Project name="CashRegister" languages="HTML, CSS, JavaScript" imgLink="/projects/cashregister.png" imgAlt="Imagem do site validar números de telefone americanos" modalOpen={handleModalOpening}/>
+          <Project name="Temperatura" languages="HTML, CSS, JavaScript" imgLink="/projects/temperatura.png" imgAlt="Imagem do site conversor de temperaturas" modalOpen={handleModalOpening}/>
+          <Project name="Pokedex" languages="HTML, CSS, JavaScript" imgLink="/projects/pokedex.png" imgAlt="Imagem do site de pokedex" modalOpen={handleModalOpening}/>
+          <Project name="Album" languages="HTML, CSS" imgLink="/projects/album.png" imgAlt="Imagem do site de album de fotos" modalOpen={handleModalOpening}/>
+          <Project name="Tictactoe" languages="HTML, CSS, JS" imgLink="/projects/tictactoe.png" imgAlt="Imagem do site do jogo da  velha" modalOpen={handleModalOpening}/>
+          <Project name="Focas" languages="HTML, CSS" imgLink="/projects/focas.png" imgAlt="Imagem do site das focas" modalOpen={handleModalOpening}/>
+          <Project name="Marte" languages="HTML, CSS, Bootstrap, Sass" imgLink="/projects/marte.png" imgAlt="Imagem da página de login de ida a marte" modalOpen={handleModalOpening}/>
         </div>
       </section>
       <section className="contacts">
