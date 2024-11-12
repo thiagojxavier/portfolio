@@ -10,12 +10,14 @@ interface ProjectProps {
 
 export function Project({name, languages, imgLink, imgAlt, modalOpen}:ProjectProps) {
     return (
-        <div className="projects__project">
-            <h3 className="project__name">{name}</h3>
-            <p className="project__paragraph">{languages}</p>
-            <div>
-                <img className="project__image" id={name} src={imgLink} alt={imgAlt} onMouseOver={window.innerWidth > 720 ? modalOpen : undefined}/>
+        <a href={imgLink}>
+            <div className="projects__project">
+                <h3 className="project__name">{name}</h3>
+                <p className="project__paragraph">{languages}</p>
+                <div>
+                    <img className="project__image" id={name} src={imgLink} alt={imgAlt} onMouseOver={window.innerWidth > 720 ? modalOpen : undefined}/>
+                </div>
             </div>
-        </div>
+        </a>
     )
 }
