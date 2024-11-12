@@ -5,12 +5,13 @@ interface ProjectProps {
     languages: string
     imgLink: string
     imgAlt: string
+    href: string
     modalOpen: MouseEventHandler<HTMLImageElement>
 }
 
-export function Project({name, languages, imgLink, imgAlt, modalOpen}:ProjectProps) {
+export function Project({name, languages, imgLink, imgAlt, modalOpen, href}:ProjectProps) {
     return (
-        <a href={imgLink}>
+        <a href={href}>
             <div className="projects__project">
                 <h3 className="project__name">{name}</h3>
                 <p className="project__paragraph">{languages}</p>

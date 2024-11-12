@@ -115,21 +115,21 @@ export function App() {
       <section className="projects">
         <h2 className="projects-title">Projetos</h2>
         <div className="projects__flex-wrapper">
-          <Project name="Calculadora" languages="HTML, CSS, JavaScript" imgLink="/projects/calculadora.png" imgAlt="Imagem do site da calculadora" modalOpen={handleModalOpening}/>
-          <Project name="ToDoList" languages="HTML, CSS, JavaScript" imgLink="/projects/todolist.png" imgAlt="Imagem do site da to-do-list" modalOpen={handleModalOpening}/>
-          <Project name="MusicReactProject" languages="HTML, CSS, TypeScript, React, Tailwind" imgLink="/projects/musicreactproject.png" imgAlt="Imagem do site de música react" modalOpen={handleModalOpening}/>
-          <Project name="Relogio" languages="HTML, CSS, JavaScript" imgLink="/projects/relogio.png" imgAlt="Imagem do site relógio" modalOpen={handleModalOpening}/>
-          <Project name="Palindrome" languages="HTML, CSS, JavaScript" imgLink="/projects/palindrome.png" imgAlt="Imagem do site Palindrome" modalOpen={handleModalOpening}/>
-          <Project name="ConversorForNumerosRomanos" languages="HTML, CSS, JavaScript" imgLink="/projects/conversorfornumerosromanos.png" imgAlt="Imagem do site conversor para números romanos" modalOpen={handleModalOpening}/>
-          <Project name="TelephoneNumberValidator" languages="HTML, CSS, JavaScript" imgLink="/projects/telephonenumbervalidator.png" imgAlt="Imagem do site validar números de telefone americanos" modalOpen={handleModalOpening}/>
-          <Project name="TheUniverse" languages="HTML, CSS, JavaScript" imgLink="/projects/theuniverse.png" imgAlt="Imagem do site universe que trabalha o SPA(single page application)" modalOpen={handleModalOpening}/>
-          <Project name="CashRegister" languages="HTML, CSS, JavaScript" imgLink="/projects/cashregister.png" imgAlt="Imagem do site validar números de telefone americanos" modalOpen={handleModalOpening}/>
-          <Project name="Temperatura" languages="HTML, CSS, JavaScript" imgLink="/projects/temperatura.png" imgAlt="Imagem do site conversor de temperaturas" modalOpen={handleModalOpening}/>
-          <Project name="Pokedex" languages="HTML, CSS, JavaScript" imgLink="/projects/pokedex.png" imgAlt="Imagem do site de pokedex" modalOpen={handleModalOpening}/>
-          <Project name="Album" languages="HTML, CSS" imgLink="/projects/album.png" imgAlt="Imagem do site de album de fotos" modalOpen={handleModalOpening}/>
-          <Project name="Tictactoe" languages="HTML, CSS, JS" imgLink="/projects/tictactoe.png" imgAlt="Imagem do site do jogo da  velha" modalOpen={handleModalOpening}/>
-          <Project name="Focas" languages="HTML, CSS" imgLink="/projects/focas.png" imgAlt="Imagem do site das focas" modalOpen={handleModalOpening}/>
-          <Project name="Marte" languages="HTML, CSS, Bootstrap, Sass" imgLink="/projects/marte.png" imgAlt="Imagem da página de login de ida a marte" modalOpen={handleModalOpening}/>
+          <Project name="Calculadora" languages="HTML, CSS, JavaScript" imgLink="/projects/calculadora.png" imgAlt="Imagem do site da calculadora" modalOpen={handleModalOpening} href={linksSites['calculadora']}/>
+          <Project name="ToDoList" languages="HTML, CSS, JavaScript" imgLink="/projects/todolist.png" imgAlt="Imagem do site da to-do-list" modalOpen={handleModalOpening} href={linksSites['todolist']} />
+          <Project name="MusicReactProject" languages="HTML, CSS, TypeScript, React, Tailwind" imgLink="/projects/musicreactproject.png" imgAlt="Imagem do site de música react" modalOpen={handleModalOpening} href={linksSites['musicreactproject']}/>
+          <Project name="Relogio" languages="HTML, CSS, JavaScript" imgLink="/projects/relogio.png" imgAlt="Imagem do site relógio" modalOpen={handleModalOpening} href={linksSites['relogio']}/>
+          <Project name="Palindrome" languages="HTML, CSS, JavaScript" imgLink="/projects/palindrome.png" imgAlt="Imagem do site Palindrome" modalOpen={handleModalOpening} href={linksSites['palindrome']}/>
+          <Project name="ConversorForNumerosRomanos" languages="HTML, CSS, JavaScript" imgLink="/projects/conversorfornumerosromanos.png" imgAlt="Imagem do site conversor para números romanos" modalOpen={handleModalOpening} href={linksSites['conversorfornumerosromanos']}/>
+          <Project name="TelephoneNumberValidator" languages="HTML, CSS, JavaScript" imgLink="/projects/telephonenumbervalidator.png" imgAlt="Imagem do site validar números de telefone americanos" modalOpen={handleModalOpening} href={linksSites['telephonenumbervalidator']}/>
+          <Project name="TheUniverse" languages="HTML, CSS, JavaScript" imgLink="/projects/theuniverse.png" imgAlt="Imagem do site universe que trabalha o SPA(single page application)" modalOpen={handleModalOpening} href={linksSites['theuniverse']}/>
+          <Project name="CashRegister" languages="HTML, CSS, JavaScript" imgLink="/projects/cashregister.png" imgAlt="Imagem do site validar números de telefone americanos" modalOpen={handleModalOpening} href={linksSites['cashregister']}/>
+          <Project name="Temperatura" languages="HTML, CSS, JavaScript" imgLink="/projects/temperatura.png" imgAlt="Imagem do site conversor de temperaturas" modalOpen={handleModalOpening} href={linksSites['temperatura']}/>
+          <Project name="Pokedex" languages="HTML, CSS, JavaScript" imgLink="/projects/pokedex.png" imgAlt="Imagem do site de pokedex" modalOpen={handleModalOpening} href={linksSites['pokedex']}/>
+          <Project name="Album" languages="HTML, CSS" imgLink="/projects/album.png" imgAlt="Imagem do site de album de fotos" modalOpen={handleModalOpening} href={linksSites['album']}/>
+          <Project name="Tictactoe" languages="HTML, CSS, JS" imgLink="/projects/tictactoe.png" imgAlt="Imagem do site do jogo da  velha" modalOpen={handleModalOpening} href={linksSites['tictactoe']}/>
+          <Project name="Focas" languages="HTML, CSS" imgLink="/projects/focas.png" imgAlt="Imagem do site das focas" modalOpen={handleModalOpening} href={linksSites['focas']}/>
+          <Project name="Marte" languages="HTML, CSS, Bootstrap, Sass" imgLink="/projects/marte.png" imgAlt="Imagem da página de login de ida a marte" modalOpen={handleModalOpening} href={linksSites['marte']}/>
         </div>
       </section>
       <section className="contacts">
