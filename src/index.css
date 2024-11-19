@@ -617,6 +617,10 @@
   width: 30px;
 }
 
+.contacts__contact-id {
+  text-align: right;
+}
+
 .dark .contacts {
   background-image: linear-gradient(to right, #0f0f0f, #1f1f1f);
 }

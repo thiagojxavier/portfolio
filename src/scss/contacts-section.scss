@@ -40,6 +40,10 @@
     width: 30px;
 }
 
+.contacts__contact-id {
+    text-align: right;
+}
+
 .dark {
     .contacts {
         background-image: linear-gradient(to right, $color-dark-theme-2, $color-dark-theme-3);
