@@ -25,6 +25,8 @@ export function App() {
   const [imageSrcModal, setImageSrcModal] = useState('');
   const [link, setLink] = useState('');
 
+  const [ isCurriculum, setIsCurriculum] = useState(false);
+
   const linksSites:linksSitesProps = {
     calculadora: 'https://thiagojxavier.github.io/calculadora/',
     todolist: 'https://thiagojxavier.github.io/to-do-list/',
@@ -43,12 +45,19 @@ export function App() {
     marte: 'https://page-login-self.vercel.app/'
   }
   
-  function handleModalOpening(event: React.MouseEvent<HTMLDivElement>) {
+  function handleModalOpening(event: React.MouseEvent<HTMLDivElement>, isModalCurriculum = false) {
     const id = event.currentTarget.id.toLowerCase()
     setLink(id);
     setImageSrcModal(`/projects/${id}.png`);
     setIsModalOpen(true);
     setTimeout(() => setIsModalAnimation(true), 200);
+
+    if(isModalCurriculum) {
+      setIsCurriculum(true);
+      return
+    }
+
+    setIsCurriculum(false);
   }
 
   function handleModalClosing() {
@@ -57,14 +66,9 @@ export function App() {
   }
 
   function changeTheme() {
-    if(theme === 'dark') {
-      localStorage.setItem('theme-page', 'light');
-      setTheme('light');
-      return
-    } 
-
-    localStorage.setItem('theme-page', 'dark');
-    setTheme('dark');
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme-page', newTheme);
+    setTheme(newTheme);
   }
 
   return (
@@ -75,11 +79,14 @@ export function App() {
           <div className="header__theme-box-container">
             <Moon />
             <label htmlFor="theme" className="header__theme-box">
-              {theme === 'dark' 
-              ? 
-                <input className="header__theme-box__box" type="checkbox" name="theme" id="theme" onChange={changeTheme}/>
-              :
-                <input className="header__theme-box__box" type="checkbox" name="theme" id="theme" onChange={changeTheme} checked/>}
+              <input
+                className="header__theme-box__box"
+                type="checkbox" name="theme"
+                id="theme"
+                onChange={changeTheme}
+                checked={theme === 'light'}
+                aria-label={`Mudar para tema ${theme === 'dark' ? 'claro' : 'escuro'}`}
+              />
               <span className="header__theme-box__btn"></span>
             </label>
             <Sun />
@@ -145,7 +152,7 @@ export function App() {
       <section className="curriculum">
         <h2 className="curriculum__title">Currículo</h2>
         <div className="curriculum__preview">
-          <img id="curriculum-full" src="/curriculum/curriculum-preview.png" alt="Prévia do currículo" onMouseOver={handleModalOpening}/>
+          <img id="curriculum-full" src="/curriculum/curriculum-preview.png" alt="Prévia do currículo" onMouseOver={(event) => handleModalOpening(event, true)}/>
         </div>
         <a href="/curriculum/curriculum.pdf" download={'currículo.pdf'}>
           <button className="curriculum__btn">
@@ -154,7 +161,7 @@ export function App() {
           </button>
         </a>
       </section>
-      {isModalOpen && <Modal modalAnimation={isModalAnimation} handleModalClose={handleModalClosing} imageSrc={imageSrcModal} href={linksSites[link]}/>}
+      {isModalOpen && <Modal modalAnimation={isModalAnimation} handleModalClose={handleModalClosing} imageSrc={imageSrcModal} href={linksSites[link]} isCurriculum={isCurriculum} />}
       <footer className="footer">
         <p>© 2024 - Code by Thiago<span className="footer__color-different">dev</span></p>
       </footer>
